@@ -43,12 +43,43 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 6.5rem;
 }
-
+/* DÙNG CHUNG CHO TOÀN BỘ */
 section {
   max-width: 1200px;
   margin: 0 auto;
-  /* padding: 3rem 2rem; */
+  padding: 3rem 2rem;
 }
+
+.btn {
+  display: inline-block; /*Để có thể sử dụng margin-top*/
+  background-color: var(--main-color);
+  padding: 1rem 3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  color: var(--white);
+}
+
+.btn:hover {
+  background-color: var(--black);
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.heading img {
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.heading h3 {
+  font-size: 4rem;
+  color: var(--black);
+  font-family: "Merienda One", cursive;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -68,7 +99,7 @@ section {
 }
 
 .header .flex .logo img {
-  height: 4rem; /*Chiều cao ảnh */
+  height: 4.5rem; /*Chiều cao ảnh */
 }
 
 .header .flex .navbar a {
@@ -88,6 +119,257 @@ section {
   color: var(--black);
   cursor: pointer;
 }
+
+.home-bg {
+  background: linear-gradient(90deg, var(--white), transparent 70%),
+    url(../image/home-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home-bg .home {
+  min-height: 70rem;
+  display: flex;
+  align-items: center;
+}
+
+.home-bg .home .content {
+  width: 50rem; /*Chiều dài của đoạn văn*/
+  text-align: center;
+}
+
+.home-bg .home .content h3 {
+  font-size: 6rem;
+  color: var(--black);
+  font-family: "Merienda One", cursive;
+}
+
+.home-bg .home .content p {
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  color: var(--black);
+  line-height: 2;
+  text-transform: capitalize;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.about .image {
+  flex: 1 1 40rem;
+}
+
+.about .image img {
+  width: 100%;
+}
+
+.about .content {
+  flex: 1 1 40rem;
+}
+
+.about .content h3 {
+  font-size: 5rem;
+  color: var(--black);
+  font-family: "Merienda One", cursive;
+}
+.about .content p {
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  color: var(--black);
+  line-height: 2;
+  text-transform: capitalize;
+}
+
+.facility .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.facility .box-container .box {
+  text-align: center;
+}
+
+.facility .box-container .box img {
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+
+.facility .box-container .box h3 {
+  font-size: 2rem;
+  color: var(--black);
+  margin: 1rem 0;
+  font-family: "Nunito", sans-serif;
+}
+
+.facility .box-container .box p {
+  line-height: 2;
+  font-size: 1.4rem;
+  color: var(--light-color);
+}
+
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 30rem);
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.menu .box-container .box {
+  text-align: center;
+}
+
+.menu .box-container .box img {
+  height: 30rem;
+  margin-bottom: 1rem;
+}
+
+.menu .box-container .box h3 {
+  font-size: 2rem;
+  color: var(--black);
+  margin: 1rem 0;
+  font-family: "Nunito", sans-serif;
+}
+
+.gallery .box-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    33rem
+  ); /*33 rem la dộ dài giống nhau của ảnh*/
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.gallery .box-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /*Giống background-size: ;*/
+}
+
+.team .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.team .box-container .box {
+  text-align: center;
+}
+
+.team .box-container .box img {
+  /* height: 100%; */
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.team .box-container .box h3 {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.contact .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contact .row .image {
+  flex: 1 1 50rem;
+}
+
+.contact .row .image img {
+  width: 100%;
+}
+
+.contact .row form {
+  flex: 1 1 30rem;
+  padding: 2rem;
+  border: var(--border);
+  text-align: center;
+}
+
+.contact .row form h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  /* padding-bottom: 1rem; */
+}
+.contact .row form .box {
+  width: 100%;
+  padding: 1.4rem;
+  color: var(--black);
+  border: var(--border);
+  margin: 1rem 0;
+  font-size: 1.6rem;
+}
+
+.contact .row form .btn {
+  border: none;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.footer .box-container .box {
+  text-align: center;
+}
+
+.footer .box-container .box i {
+  font-size: 2.5rem;
+  line-height: 6rem; /*Căn giữa cho ảnh*/
+  height: 6rem; /*lấy kích thước vuông*/
+  width: 6rem;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.footer .box-container .box h3 {
+  margin: 0.5rem 0;
+  font-size: 2rem;
+  color: var(--light-color);
+}
+
+.footer .box-container .box p {
+  line-height: 2;
+  font-size: 1.6rem;
+  color: var(--light-color);
+}
+
+.footer .credit {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: var(--border);
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.footer .credit span {
+  color: var(--main-color);
+}
+/* 
+
+
+
+
+
+*/
 
 /* Media queries */
 @media (max-width: 991px) {
@@ -126,10 +408,26 @@ section {
     display: block;
     padding: 1.5rem;
   }
+
+  .home-bg {
+    background-position: left;
+  }
+  .home-bg .home {
+    justify-content: center; /*Lúc này cho hết content vào giữa*/
+  }
+  .about .content h3 {
+    font-size: 3rem;
+  }
+  .heading h3 {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 450px) {
   html {
     font-size: 50%;
+  }
+  .heading img {
+    height: 3rem;
   }
 }
