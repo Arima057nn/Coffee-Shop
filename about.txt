@@ -1,0 +1,36 @@
+$ _POST là một biến siêu toàn cục PHP được sử dụng để thu thập dữ liệu biểu mẫu sau khi gửi biểu mẫu HTML với method = "post"
+$ _REQUEST là một biến siêu toàn cục PHP được sử dụng để thu thập dữ liệu sau khi gửi biểu mẫu HTML.
+filter_var() chức năng cả xác thực và làm sạch dữ liệu.
+isset(): Kiểm tra xem một biến có trống không. Đồng thời kiểm tra xem biến có được đặt / khai báo hay không
+
+
+*******************************************************************
+<!DOCTYPE html>
+<html>
+<body>
+
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Name: <input type="text" name="fname">
+  <input type="submit">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+    // collect value of input field 
+    $name = $_POST['fname'];  // thu thập giá trị bên trong ô nhập có tên là fname
+    if (empty($name)) {    //Nếu biến $name trống thì in ra thông báo trống
+        echo "Name is empty";
+    } else {
+        echo $name; //
+    }
+}
+?>
+
+</body>
+</
+
+
+$stmt = $conn->prepare('INSERT INTO users (name, email, age) values (?, ?, ?)');
+$data = array('Vu Hoang Lam', 'lamvh@live.com', 22);
+//Phương thức execute() dưới đây sẽ gán lần lượt giá trị trong mảng vào các Placeholder theo thứ tự
+$stmt->execute($data);

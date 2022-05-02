@@ -64,6 +64,28 @@ section {
   background-color: var(--black);
 }
 
+.message {
+  background-color: var(--main-color);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.message span {
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.message i {
+  font-size: 2.5rem;
+  color: var(--white);
+}
+
+.message i:hover {
+  color: var(--black);
+}
+
 .heading {
   text-align: center;
   margin-bottom: 2rem;

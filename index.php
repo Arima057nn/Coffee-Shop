@@ -1,3 +1,37 @@
+<?php
+
+$db_name = 'mysql:host=localhost;dbname=contact_db';
+$username = 'root';
+$password = '';
+
+$conn = new PDO($db_name, $username, $password); // kết nối với mysql
+
+if(isset($_POST['send'])){  // isset(): Kiểm tra xem một biến có trống không. Đồng thời kiểm tra xem biến có được đặt / khai báo hay không
+ 
+   $name = $_POST['name']; // thu thập giá trị bên trong ô nhập có tên là name
+
+   $name = filter_var($name, FILTER_SANITIZE_STRING); // xóa tất cả thẻ HTML khỏi một chuỗi
+   $number = $_POST['number'];
+   $number = filter_var($number, FILTER_SANITIZE_STRING);
+   $guests = $_POST['guests'];
+   $guests = filter_var($guests, FILTER_SANITIZE_STRING);
+
+   $select_contact = $conn->prepare("SELECT * FROM `contact_form` WHERE name = ? AND number = ? AND guests = ?");
+   $select_contact->execute([$name, $number, $guests]);  //dưới đây sẽ gán lần lượt giá trị trong mảng vào các Placeholder theo thứ tự
+
+   if($select_contact->rowCount() > 0){
+      $message[] = 'message sent already!';
+   }else{
+      $insert_contact = $conn->prepare("INSERT INTO `contact_form`(name, number, guests) VALUES(?,?,?)");
+      $insert_contact->execute([$name, $number, $guests]);
+      $message[] = 'message sent successfully!';
+   }
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,6 +48,22 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+
+
+<?php
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+
+?>
     <!-- header section starts  -->
     <header class="header">
       <section class="flex">
